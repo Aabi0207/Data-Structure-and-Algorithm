@@ -1,6 +1,29 @@
-# def group_anagrams(list):
-#     for word in list:
-#         char_dict = {char: word.count(char) for char in word}
+# def group_anagrams(words):
+#     anagram_list = []
+#     used_index = []
+#     for word in words:
+#         if words.index(word) not in used_index:
+#             same_letter_list = []
+#             same_letter_list.append(word)
+#             for i in range(words.index(word) + 1, len(words)):
+#                 result = all(char in words[i] for char in word)
+#                 if result and i not in used_index:
+#                     used_index.append(i)
+#                     same_letter_list.append(words[i])
+#             anagram_list.append(same_letter_list)
+#     return anagram_list
+# 
+#OR
+
+def group_anagrams(strings):
+    anagram_groups = {}
+    for string in strings:
+        canonical = ''.join(sorted(string))
+        if canonical in anagram_groups:
+            anagram_groups[canonical].append(string)
+        else:
+            anagram_groups[canonical] = [string]
+    return list(anagram_groups.values())
 
 
 
