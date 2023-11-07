@@ -42,7 +42,7 @@ class LinkedList:
     def remove_duplicates(self):
         value_set = set()
         temp = self.head
-        dummy = None
+        dummy = Node(0)
         traverse = dummy
         while temp:
             if temp.value not in value_set:

@@ -49,6 +49,7 @@ class LinkedList:
             less.next = dummy2.next
             greater.next = None
             self.head = dummy1.next
+            dummy1.next = dummy2.next = None
 
 
 
